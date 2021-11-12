@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<head>
+		<link href="css/ministyle.css" type="text/css" rel="stylesheet" />
+		<script src="js/TweenMax.min.js"></script>	
+		<script src="js/MotionPathPlugin.js"></script>	
+		<script type="text/javascript" src="js/gamelevel.json"></script>
+
+		<title>Éc</title>
+        <meta content="Éc éc éc, éc éc!" name="description" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta charset="UTF-8">
+	    <meta property="og:image" content="http://zoiop.com/web-project/ec/img/ec.jpg" />
+
+<style>
+	@charset "UTF-8";
+/* CSS Document */
+body::before
+{	
+	content: "";
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+	background: url('img/end-thumb.png'),
+				url('img/end-face-1.png'),
+				url('img/end-face-2.png'),
+				url('img/end-face-3.png'),
+				url('img/end-hands.png'),
+				url('img/end-body-1.png'),
+				url('img/end-body-2.png'),
+				url('img/end-effect-1.gif'),
+				url('img/end-effect-2.gif'),
+
+
+				url('img/damage1-l.png'),
+				url('img/damage1-r.png'),
+				url('img/damage1.png'),
+				url('img/damage2-l.png'),
+				url('img/damage2-r.png'),
+				url('img/damage2.png'),
+				url('img/damage3-l.png'),
+				url('img/damage3-r.png'),
+				url('img/damage3.png'),
+				url('img/ec.png'),
+				url('img/hammer.png'),
+				url('img/hit1.png'),
+				url('img/hit2.png'),
+				url('img/hole-cover.png'),
+				url('img/hole.png'),
+				url('img/normal-l.png'),
+				url('img/normal-r.png'),
+				url('img/normal.png'),
+				url('img/run-0.png'),
+				url('img/run-1.png'),
+				url('img/run-2.png'),
+				url('img/run-3.png'),
+				url('img/run-back-0.png'),
+				url('img/run-back-1.png'),
+				url('img/run-back-2.png'),
+				url('img/run-back-3.png'),
+				url('img/run-hit-.png'),
+				url('img/run-hit-back-.png'),
+				url('img/star.png'),
+				url('img/sweat.png'),
+				url('img/trap1-hit.png'),
+				url('img/trap1.png');
+
+             
+}
+
+</style>	
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/TweenMax.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+
+    <script>
+   document.addEventListener("touchmove", function(event){
+    event.preventDefault();
+}, { passive: false });
+
+
+    </script>
+
+
+</head>
+
+<body ondragstart="return false;" ondrop="return false;">
+
+
+
+<div class="alert" style="display: none; z-index:1001;">
+	<div class="hi-score-list">
+
+		
+	</div>
+	<img src="img/end-thumb.png" class="hi-thumb">
+</div>
+
+<div class="wrapper" style="display:none">
+	
+	<header style="display:block">
+		<div class="lives">
+			<img class="live-head live-1" src = "img/head.png">
+			<img class="live-head live-2" src = "img/head.png">
+			<img class="live-head live-3" src = "img/head.png">
+
+		</div>
+
+		<div class="score">
+			<p class="ec-count"><img src="img/ec.png"> x<b class="score-out">10</b></p>
+			<p class="minus">-2</p>
+		</div>
+		
+	</header>
+
+	<main style="text-align: center;">
+		<button class="btn-start" id="btn-start" style="display: none">► éc</button>
+	</main>
+	
+	<div class="game-container" style="display: block">	
+	</div><!-- end game-container -->
+	<script src="js/whack.js"></script>
+
+
+
+</div><!-- end wrapper -->
+
+
+<div id="home-screen" class="home-screen" style ="z-index:1000">
+	<div class="gradient-bg hide">
+		<div class="gradient"></div>
+	</div>
+	<img class="home-img hide" src="img/cover.png">
+	<div class="intro">
+		
+	</div>
+	<div class="main-btn">
+		<div class="ranking"><img src="img/trophy-icon.png"></div>
+		<div class="button nextscreen start"><span>éc</span></div>	
+	</div>
+
+	<div class="hiscore-fill" style="display: none">
+		<div class="khen">Ngầu vãi!</div>
+		<div class="name-group">
+				<input type="text" id="name" placeholder="bạn tên gì vậy?" name="" maxlength="12">
+				<div class="namesubmit"><img src="img/enter-icon.png"></div>
+		</div>
+	</div>
+</div>
+
+<div id="game-sum" class="begin" >
+	
+	<div class="poke">
+		<div class="circle-container">
+			<img class="end-body" src="img/end-body-1.png">
+		</div>
+		<img class="end-face face-bounce-1" src="img/end-face-1.png">
+		<div class="circle-container circle-container-2" >
+			<img class="end-hands " src="img/end-hands.png">
+		</div>
+		<img class="end-effect-1 " src="img/end-effect-1.gif">
+		<img class="end-effect-1-2 " src="img/end-effect-1.gif">
+		<img class="end-thumb-1 hide" src="img/end-thumb.png">
+		<img class="end-thumb-2 hide" src="img/end-thumb.png">
+		<img class="end-effect-2 hide" src="img/end-effect-2.gif">
+	</div>
+
+	<div class="end-score">
+		<img src="img/ec.png"><img class="second-ec" src="img/ec.png"><img class="second-ec" src="img/ec.png"><span class="x">x</span><span class="score">00</span>
+	</div>
+</div>
+
+
+
+
+<div id="countdown" class="hide">
+</div>
+
+
+<div id="run-away" class="run-away" index="" style="">
+	<img class="climb-img hide" src="img/run-0.png">
+	<img class="run-img hide" src="img/run-1.png">
+	<img class="hit-img hide"  src="img/run-hit-.png">
+	<img class="run-u hide" src="img/u.png">
+	<div class="sfx hide">
+			<img src="img/star.png" class="star">
+			<img src="img/ec.png" class="ec">
+	</div>
+	
+
+	<div class="run-hitbox"></div>
+</div>
+
+
+<div id="end-screen" class="hide">
+	
+</div>
+<img class="hammer " src="img/hammer.png">
+</body>
+</html>
